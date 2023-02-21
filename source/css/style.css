@@ -637,7 +637,6 @@ body._touch .arrow {
   font-size: 0;
   width: 40px;
   height: 100px;
-  z-index: 10;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
@@ -645,12 +644,14 @@ body._touch .arrow {
 /* Стрелка влево */
 .slick-arrow.slick-prev {
   left: 20px;
+  z-index: 1;
   background: url("../../img/icon/left.png") 0 50%/100% no-repeat;
 }
 
 /* Стрелка вправо */
 .slick-arrow.slick-next {
   right: 20px;
+  z-index: 1;
   background: url("../../img/icon/right.png") 0 50%/100% no-repeat;
 }
 
