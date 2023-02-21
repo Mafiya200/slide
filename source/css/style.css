@@ -1,0 +1,266 @@
+@charset "UTF-8";
+/*Обнуление*/
+@import url(https://fonts.googleapis.com/css?family=Lexend+Mega:100,200,300,regular,500,600,700,800,900);
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+/* подключение_нулевых стилей */
+/* Шрифты */
+/* Шрифты_конец */
+/* Шаблоны */
+body {
+  height: 100%;
+  background-color: #333;
+  min-width: 280px;
+  font-family: "Lexend Mega", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+html {
+  font-size: 20px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 25px;
+  max-width: 1440px;
+}
+
+.wrapper {
+  padding: 25px 5px;
+  min-height: 100%;
+}
+
+/* Слайдер */
+/* Слайдер запущен */
+/* Слайдер с точками */
+/* Ограничивающая оболочка */
+.slick-list {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+/* Лента слайдов */
+/* Слайд */
+.slick-slide {
+  -webkit-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  opacity: 0.4;
+}
+
+@media (max-width: 769px) {
+  .slick-slide {
+    opacity: 1;
+  }
+}
+/* Слайд активный (показывается) */
+/* Слайд основной */
+/* Слайд по центру */
+.slick-slide.slick-center {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+/* Клонированный слайд */
+/* Стрелка */
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  height: 150px;
+  font-size: 0;
+  width: 50px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  opacity: 1;
+}
+
+/* Стрелка влево */
+.slick-arrow.slick-prev {
+  background: url("../../img/icon/left.png") center/100% no-repeat;
+  left: 0;
+}
+
+/* Стрелка вправо */
+.slick-arrow.slick-next {
+  right: 0;
+  background: url("../../img/icon/right.png") center/100% no-repeat;
+}
+
+/* Стрелка не активная */
+.slick-arrow.slick-disabled {
+  opacity: 0.4;
+}
+
+/* Точки (булиты) */
+/* Активная точка */
+/* Элемент точки */
+.slider {
+  position: relative;
+  padding: 0px 54px;
+}
+
+.slider .slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.slider__item {
+  text-align: center;
+}
+
+.slider .slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.slick-dots li:not(:last-child) {
+  margin-right: 20px;
+  position: relative;
+}
+.slick-dots li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 175%;
+  top: 50%;
+  left: 110%;
+  background-color: white;
+}
+
+.slick-dots li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slick-dots li button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  background-color: azure;
+  border-radius: 50%;
+}
+
+.slick-dots li.slick-active button {
+  background-color: transparent;
+  border: 1px solid violet;
+}
+
+img {
+  max-width: 250px;
+  max-height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+@media (max-width: 480px) {
+  img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    height: 100px;
+    font-size: 0;
+    width: 40px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    opacity: 1;
+  }
+
+  /* Стрелка влево */
+  .slick-arrow.slick-prev {
+    background: url("../../img/icon/left.png") center/100% no-repeat;
+    left: 0;
+  }
+
+  /* Стрелка вправо */
+  .slick-arrow.slick-next {
+    right: 0;
+    background: url("../../img/icon/right.png") center/100% no-repeat;
+  }
+}
