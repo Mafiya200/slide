@@ -1,6 +1,7 @@
 'use strict';
 
-
+///Сделал функцию, которая принимает массив любых целых чисел,
+/// которая возращает новый массив, где все элементы кратны пяти. ([1,2,5,12,15,21] вернет [5,15])
 const isMobile = {
     Android: function () {
         return navigator.userAgent.match(/Android/i);
@@ -28,84 +29,51 @@ const isMobile = {
 };
 
 
+if (isMobile.any()) {
+    $(`body`).addClass(`_touch`);
+    $(`.arrow`).prev().addClass(`_active`);
 
-
-/* $(`.slider`).on(`beforeChange`,function(even,slick,currentSlide,nextSlide){
-}); */
-//$(`.slider`).on(`afterChange`,function(even,slick,currentSlide /* нельзя получить следующий слайд nextSlide*/){
-//    console.log(currentSlide);
-
-//});
-
-
-/* 
-$(`.slider`).slick(`setPosition`); /// метод перезагрузки слайдера, если возникли проблемы с его размера и подсчётами
-$(`.slider`).slick(`goTo`,3); /// метод управление слайдером из других событий, переход к слайду по номеру
-
-$(`.slider`).slick(`slickPrev`);/// метод управления шаг вперёд(стрелка влево)
-$(`.slider`).slick(`slickNext`);/// метод управления шаг назад(стрелка вправо)
-
-$(`.slider`).slick(`slickPlay`);/// метод управления запускает проигрывание слайдера
-$(`.slider`).slick(`slickPause`);/// метод управления ставит на паузу проигрывание слайдера
-
-$(`.slider`).slick(`slickAdd`,`<div></div>`); /// метод добавления в слайдер новых элементов
-$(`.slider`).slick(`slickRemove`,0); /// метод удаления в слайдере элементов(удаление происходит по индексу(0-первый))
- */
-/* 
-
-var filter = true;
-if(filter===false){
-    $(`.slider`).slick(`slickFilter`,`.filter`);///имя класса которое мы хотим оставить, после фильтрации
-    filter=true;
+    $(`.arrow`).click(function () {
+        $(this).toggleClass(`_active`);
+        $(this).next().toggleClass(`_open`);
+    });
 }
-else{
-    $(`.slider`).slick(`slickUnfilter`);
+else {
+    $(`body`).addClass(`_mouse`);
 
-    filter = false;
 }
 
-var s=$(`.slider`).slick(`slickGetOption`, 'slidesToShow');/// метод получения параметров которые действую на обьект
-$(`.slider`).slick(`slickSetOption`, 'slidesToShow',3);/// метод с помощью которого можно менять параметры, действую на обьект
-console.log(s);
-
-$(`.slider`).slick(`unslick`);/// полностью отключает слайдер буд-то его и не включали 
- */
-
-
-
-$(`.slider`).slick({
-    slidesToShow:5,
-    dots:true,
-    infinite:true,
-    waitForAnimate:false,
-    adaptiveHeight:true,
-    centerMode:true ,
-    speed:1000,
-    autoplay:false,      
-    responsive:[
-        {
-        breakpoint:769,
-        settings:{
-            slidesToShow:2,
-            centerMode:false ,
-
-        }
-    },
-    , {
-        breakpoint:625,
-        settings:{
-            slidesToShow:1,
-            variableWidth:true,
-
-        }
-    },{
-        breakpoint:1500,
-        settings:{
-            slidesToShow:3,
-            variableWidth:true,
-
-        }
-    }],
+$(`.header__burger`).click(function () {
+    $(this).toggleClass(`_active`);
+    $(`.header__menu`).toggleClass(`_active`);
+    $(`body`).toggleClass(`_lock`);
 });
 
+$(window).resize(function () {
+    $(`.arrow`).removeClass(`_active`);
+    $(`.arrow`).next().removeClass(`_open`);
+    $(`.header__burger`).removeClass(`_active`);
+    $(`.header__menu`).removeClass(`_active`);
+    $(`body`).removeClass(`_lock`);
 
+});
+
+$(`.header__menu a`).click(function () {
+    $(`.arrow`).removeClass(`_active`);
+    $(`.arrow`).next().removeClass(`_open`);
+    $(`.header__burger`).removeClass(`_active`);
+    $(`.header__menu`).removeClass(`_active`);
+    $(`body`).removeClass(`_lock`);
+
+});
+
+$(`.slider`).slick({
+    variableWidth: false,
+    adaptiveHeight: true,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 3000,
+    adaptiveHeight: true,
+    waitForAnimate:false,
+    pauseOnFocus: false,
+});
