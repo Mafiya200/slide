@@ -77,3 +77,21 @@ $(`.slider`).slick({
     waitForAnimate:false,
     pauseOnFocus: false,
 });
+$(`.sliderDig`).slick({
+    slidesToShow:3,
+    adaptiveHeight:true,
+    responsive:[{
+        breakpoint:576,
+        settings:{
+            slidesToShow:1,
+            arrows:true,
+        }
+    },{
+        breakpoint:992,
+        settings:{
+            slidesToShow:2,
+            centerMode:false,
+
+        }
+    }],
+});
